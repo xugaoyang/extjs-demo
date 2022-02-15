@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.bootcss.com/extjs/6.0.0/classic/theme-neptune/resources/theme-neptune-all.css" rel="external nofollow" target="_blank"  rel="external nofollow" target="_blank"  rel="external nofollow" target="_blank"  rel="external nofollow" target="_blank"  rel="stylesheet" />
+  <script type="text/javascript" src="https://cdn.bootcss.com/extjs/6.0.0/ext-all.js" rel="external nofollow"
+    rel="external nofollow" rel="external nofollow" rel="external nofollow"></script>
+  <script type="text/javascript">
+    Ext.onReady(function () {
+      var button = Ext.create('Ext.Button', {
+        renderTo: Ext.getElementById('helloWorldPanel'),
+        text: 'My Button',
+        listeners: {
+          myEvent: function (button) {
+            Ext.MessageBox.alert('Alert box', 'My custom event is called');
+          }
+        }
+      });
+      Ext.defer(function () {
+        button.fireEvent('myEvent');
+      }, 5000);
+    });
+  </script>
+
+</head>
+
+<body>
+  <div id="helloWorldPanel"></div>
+</body>
+
+</html>
